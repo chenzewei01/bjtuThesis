@@ -1,0 +1,22 @@
+\chapter{简要介绍}
+bjtuThesis是为了帮助交大毕业生撰写毕业论文而编写的~\LaTeX{}~模板，其前提是使用者能够处理一般的LaTeX文档，并对BibTeX有一定了解，如果你从来没有接触过LaTeX ，那也没关系，这里推荐一份入门资料：lshort.pdf(中文版名为：一份不太简短的~\LaTeXe{}~ 介绍)，磨刀不误砍柴工，学会了这些基本技能，能够让你更有效率地完成毕业论文。
+\section{系统要求}
+Windows用户推荐使用最新版的CTeX中文套装，CTeX 2.9.2.164 Full版本，下载地址：\url{http://www.ctex.org/CTeXDownload}.\par
+类Unix用户这部分应该不成问题，都是高级玩家了吧！
+\section{本模板下载}
+\url{https://github.com/chenzewei01/bjtuThesis}.
+\section{本模板的重要文件}
+关键文件如下：
+\begin{itemize}
+  \item bjtuThesis.cls:bjtuThesis文档类文件，主要是基于ctexbook文档类，不建议用户手工修改该文件。
+  \item bjtuThesis.cfg:文档类的配置文件，主要是定义一些字符串。
+  \item main.tex:主文件，编译该文件即可。
+  \item main.pdf:即本文档，由编译main.tex得到。
+  \item data/:数据文件夹，包含论文信息(info.tex)、封面(cover.tex)、摘要(cabstract.tex \& eabstract.tex)、各章节(chapN.tex)、 参考文献(ref.bib)等，具体见main.tex中的注释。
+  \item figures/:图片文件夹，包含论文中的所有图片。
+
+\end{itemize}
+\section{编译方法}
+依次执行xelatex，bibtex，xelatex，xelatex。
+\section{免责声明}
+本模板依据《北京交通大学本科生毕业设计（论文）规范》和biyesheji2005.rar编写，作者希望能给使用者写作论文带来方便，然而，作者不保证本模板完全符合学校要求，也不对由此带来的风险和损失承担任何责任。
