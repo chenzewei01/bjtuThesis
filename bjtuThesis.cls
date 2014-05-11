@@ -16,7 +16,7 @@
 %-------------------------------------------------------------------------------
 %                宏包
 %-------------------------------------------------------------------------------
-% bjtuThesis档类是基于ctexbook文档类
+% bjtuThesis类是基于ctexbook文档类
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{ctexbook}}
 \ProcessOptions\relax
 \LoadClass[UTF8,hyperref,fntef,b5paper,fancyhdr,cs4size]{ctexbook}% 论文使用B5（JIS）纸，默认小四号字体
@@ -61,7 +61,6 @@
 }
 \newcommand{\mentor}[1]{\def\@mentor{#1}}
 \newcommand{\coverdate}[3]{\def\@coverdate{\dateprint{#1}{#2}{#3}}}
-\newcommand{\sdate}[3]{\def\@sdate{\dateprint{#1}{#2}{#3}}}
 
 
 %-------------------------------------------------------------------------------
@@ -77,8 +76,8 @@
 \newcommand{\mypagestyle}[3]{
 	\pagestyle{fancy}
 	\fancyhf{}
-	\fancyhead[C]{\zihao{#1}\songti#2}
-	\fancyhead[R]{\zihao{#1}\songti#3}
+	\fancyhead[C]{\songti\zihao{#1}#2}
+	\fancyhead[R]{\songti\zihao{#1}#3}
 	\fancypagestyle{plain}{\pagestyle{fancy}}
 }
 
@@ -88,10 +87,11 @@
 %-------------------------------------------------------------------------------
 \newcommand{\fillinblank}[2]{\CJKunderline{\makebox[#1]{#2}}}
 \newcommand{\makecover}{
+    \pagestyle{empty}
 	\begin{titlepage}
 		\begin{center}
 			{
-				\includegraphics{figures/bjtu}\\[10pt]
+				\includegraphics{figures/bjtu}\\[15pt]
 				{\zihao{-0}\bfseries\cover@thesis}
 			}
 			\vfill
@@ -102,7 +102,7 @@
 						\centering\textbf{\@ctitle}
 					\end{minipage}
 				}
-				\parbox[t]{18em}{\fillinblank{18em}{}\\ \fillinblank{18em}{}}
+				\parbox[t]{18em}{\fillinblank{18em}{} \\ \fillinblank{18em}{}}
 				\\[2em]
 				\zihao{4}{\textbf{\songti\cover@etitle}}
 				\makebox[0pt][t]{
@@ -110,7 +110,7 @@
 						\centering\textbf{\@etitle}
 					\end{minipage}
 				}
-				\parbox[t]{18em}{\fillinblank{18em}{}\\ \fillinblank{18em}{}}
+				\parbox[t]{18em}{\fillinblank{18em}{} \\ \fillinblank{18em}{}}
 			}
 			\vfill
 			{
@@ -132,47 +132,11 @@
 		\end{center}
 	\end{titlepage}
 }
-\newcommand{\clearpagebyprint}{\if@twoside\cleardoublepage\else\clearpage\fi}
 
 
 %-------------------------------------------------------------------------------
-%                个人信息填写
+%                加载配置文件
 %-------------------------------------------------------------------------------
-\newcommand{\makeinfo}{
-	\begin{spacing}{2.0}
-		\begin{center}
-			\other@title\uline{\hfill{\@ctitle}\hfill}
-				\\
-			\other@school\uline{\hfill\makebox[2.5em]{\@schoolshort}\hfill}
-			\other@major\uline{\hfill\makebox[2.5em]{\@majorshort}\hfill}
-			\other@author\uline{\hfill\makebox[5em]{\@author}\hfill}
-			\other@studentid\uline{\hfill\makebox[4.5em]{\@studentid}\hfill}
-		\end{center}
-	\end{spacing}
-}
-
-
-%-------------------------------------------------------------------------------
-%                信息填写（仅用于任务书）
-%-------------------------------------------------------------------------------
-\newcommand{\maketinfo}{
-	\begin{spacing}{2.0}
-		\begin{center}
-			\other@title\uline{\hfill\@ctitle\hfill}
-				\\
-			\other@smajor\uline{\hfill\@major\hfill}
-				\\
-			\other@msignature\uline{\hfill\makebox[3em]{\@mentor}\hfill}
-			\other@sdate\@sdate
-				\\
-			\other@school\uline{\hfill\makebox[3em]{\@schoolshort}\hfill}
-			\other@major\uline{\hfill\makebox[3em]{\@majorshort}\hfill}
-			\other@author\uline{\hfill\makebox[5em]{\@author}\hfill}
-			\other@studentid\uline{\hfill\makebox[5em]{\@studentid}\hfill}
-		\end{center}
-	\end{spacing}
-}
-
 \AtEndOfClass{\input{bjtuThesis.cfg}}
 
 \endinput
