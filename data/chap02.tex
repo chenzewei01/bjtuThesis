@@ -1,21 +1,21 @@
 \chapter{使用方法}
-限于篇幅，这边只挑一部分讲，期望你自己去探索！
+限于篇幅，这边只讲一部分，期望你自己去探索！
 \section{论文信息录入}
-请在data/info.tex文件录入论文信息，更详细地，请见info.tex文件里的注释。
+请在data/info.tex文件录入论文信息，更详细地，见info.tex文件里的注释。
 \section{目录生成}
 目录由\verb|\tableofcontents|命令自动生成，需要两次xelatex编译（所以第一次编译后没见到目录，不要紧，再编译一次即可）。
 \section{正文撰写}
-请阅读文献 《\href{http://mirrors.ustc.edu.cn/CTAN/info/lshort/english/lshort.pdf}{The Not So Short Introduction to ~\LaTeXe{}~}》\cite{oetiker1995not}，中译版有点老《 \href{http://mirrors.hustunique.com/CTAN/info/lshort/chinese/lshort-zh-cn.pdf}{一份不太简短的~\LaTeXe{}~ 介绍}》
+请阅读文献《\href{http://mirrors.ustc.edu.cn/CTAN/info/lshort/english/lshort.pdf}{The Not So Short Introduction to ~\LaTeXe{}~}》，中译版《 \href{http://mirrors.hustunique.com/CTAN/info/lshort/chinese/lshort-zh-cn.pdf}{一份不太简短的~\LaTeXe{}~ 介绍}》。
 \section{参考文献管理}
 这部分重点介绍吧！\par
 通过以下几个步骤，可以轻松完成参考文献的生成。\par
 \begin{enumerate}
-  \item 在谷歌学术搜索中检索到文献后，在文献条目区域单击导入BibTeX 选项，页面中出现文献的引用信息；
-  \item 将文献引用信息的内容复制之后，添加到data文件夹下的ref.bib中；
-  \item 当标注参考文献时，在需要标注的地方输入\verb|\cite{}| 指令，花括号内输入参考文献引用信息中的第一行信息即可（常常为文献的缩略信息）；
-  \item 用BibTex编译main.aux文件（该文件由xelatex编译main.tex产生，所以若没有main.aux，请编译main.tex），之后再用xelatex编译两次main.tex，保证参考文献条目的插入及目录的完整；
+  \item 在谷歌学术搜索中检索到文献后，在文献条目区域单击导入BibTeX选项，页面中出现文献的引用信息；
+  \item 将文献引用信息的内容复制之后，粘贴到ref文件夹下的refs.bib中；
+  \item 当标注参考文献时，在需要标注的地方输入\verb|\cite{}| 命令，花括号内输入参考文献引用信息中的第一行即可（常常为文献的缩略信息），更具体地，可参考文献\cite{胡伟2011LaTeXe完全学习手册}；
+  \item 用bibtex编译main.aux文件（该文件由xelatex编译main.tex产生，所以若没有main.aux，请先编译main.tex），之后再用xelatex编译两次main.tex，保证参考文献条目的插入及目录的完整；
 \end{enumerate}
 \par
-这里介绍的只是一个小技巧，BibTex具有强大的参考文献管理功能，有兴趣的同学可以进一步研究。
+这里介绍的只是一个小技巧，BibTeX具有强大的参考文献管理功能，有兴趣的同学可以进一步研究。
 \section{增加宏包}
 为了方便管理，你可以在data/package.tex增加你所需要的宏包。
