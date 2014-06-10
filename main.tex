@@ -1,16 +1,18 @@
-\documentclass[oneside,openany]{bjtuThesis}% 单面打印
-% \documentclass[twoside]{bjtuThesis}% 双面打印
-\include{data/package}% 加载宏包
+\documentclass[oneside,openany]{bjtuThesis}
+
+\hypersetup{colorlinks,linkcolor=red,citecolor=green,urlcolor=magenta}% 链接颜色设置
+\linespread{1.5}% 设置行距
+\input{data/package}% 加载宏包
+\input{data/info}% 加载论文信息
+
 
 \begin{document}
-
-\include{data/info}% 加载论文信息
 
 % 封面
 \makecover
 
 \frontmatter
-\mypagestyle{-4}{北京交通大学毕业设计（论文）}{}% 页眉设置
+\thesispagestyle{-4}{北京交通大学毕业设计（论文）}{}% 页眉设置
 
 % 中文摘要
 \include{data/cabstract}
@@ -22,26 +24,24 @@
 \tableofcontents
 
 \mainmatter
-\mypagestyle{-4}{北京交通大学毕业设计（论文）}{第 \thepage 页}% 页眉设置
+\thesispagestyle{-4}{北京交通大学毕业设计（论文）}{第 \thepage 页}% 页眉设置
 
 % 正文
 \include{data/chap01}
 \include{data/chap02}
 \include{data/chap03}
+\include{data/chap04}
 
 \backmatter
-\mypagestyle{-4}{北京交通大学毕业设计（论文）}{}% 页眉设置
+\thesispagestyle{-4}{北京交通大学毕业设计（论文）}{}% 页眉设置
 
 % 参考文献
-\bibliographystyle{chinesebst}
-\bibliography{data/ref}
+\bibliographystyle{ref/chinesebst}
+\bibliography{ref/refs}
 \addcontentsline{toc}{chapter}{参考文献}
 
 % 附录
-\include{data/edoc}% 外文原文
+\include{data/edoc}% 英文原文
 \include{data/cdoc}% 中文翻译
-
-% 致谢
-\include{data/ack}
 
 \end{document}
